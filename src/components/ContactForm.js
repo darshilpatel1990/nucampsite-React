@@ -3,8 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateContactForm } from "../utils/validateContactForm";
 
 const ContactForm = () => {
-    
-    const handleSubmit = (values, {resetForm}) => {
+
+    const handleSubmit = (values, { resetForm }) => {
         console.log('form values:', values);
         console.log('in JSON format:', JSON.stringify(values));
         resetForm();
@@ -13,14 +13,14 @@ const ContactForm = () => {
     return (
         <Formik
             initialValues={{
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            agree: false,
-            contactType: 'By Phone',
-            feedback: ''
-        }} 
+                firstName: '',
+                lastName: '',
+                phoneNum: '',
+                email: '',
+                agree: false,
+                contactType: 'By Phone',
+                feedback: ''
+            }}
             onSubmit={handleSubmit}
             validate={validateContactForm}
         >
@@ -110,7 +110,7 @@ const ContactForm = () => {
                         Your Feedback
                     </Label>
                     <Col md='10'>
-                        <Field 
+                        <Field
                             className='form-control'
                             name='feedback'
                             as='textarea'
